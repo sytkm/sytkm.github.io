@@ -10,8 +10,8 @@ $(function() {
     return {
       $: $(layer),
       factor:$(layer).data("z")/8000,
-      baseX: $(layer).position().left,
-      baseY: $(layer).position().top
+      baseX:$(layer).position().left,
+      baseY:$(layer).position().top
     };
   });
   $(document.body).mousemove(function(ev) {
@@ -19,28 +19,28 @@ $(function() {
       var dx = ev.pageX - baseX;
       var dy = ev.pageY - baseY;
       layer.$.css({
-        left: layer.baseX + (dx*layer.factor) +"px",
-        top:  layer.baseY + (dy*layer.factor) +"px" });
+        left:layer.baseX + (dx*layer.factor) +"px",
+        top:layer.baseY + (dy*layer.factor) +"px" });
       });
     });
-    var isSmartphone = navigator.userAgent.search(/(iPhone|iPad|Android)/) !== -1;
-    !isSmartphone && $(document.body).mousemove(function(ev) {
+    var isSP = navigator.userAgent.search(/(iPhone|iPad|Android)/) !== -1;
+    !isSP && $(document.body).mousemove(function(ev) {
       var dx = ev.pageX - baseX;
       var dy = ev.pageY - baseY;
       $.each(layers, function(_, layer) {
         layer.$.css({
-          left: layer.baseX + (dx*layer.factor) +"px",
-          top:  layer.baseY + (dy*layer.factor) +"px" });
+          left:layer.baseX + (dx*layer.factor) +"px",
+          top:layer.baseY + (dy*layer.factor) +"px" });
         });
       });
-      // 今回追加したコード
-      isSmartphone && window.addEventListener("devicemotion", function(ev){
+
+      isSP && window.addEventListener("devicemotion", function(ev){
         var dy = baseY/2 + ev.accelerationIncludingGravity.y*100;
         var dx = baseX/2 - ev.accelerationIncludingGravity.x*100;
         $.each(layers, function(_, layer) {
           layer.$.css({
-            left: layer.baseX + (dx*layer.factor) +"px",
-            top:  layer.baseY + (dy*layer.factor) +"px" });
+            left:layer.baseX + (dx*layer.factor) +"px",
+            top:layer.baseY + (dy*layer.factor) +"px" });
           });
         });
       });
