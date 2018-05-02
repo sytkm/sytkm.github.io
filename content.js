@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 $(function() {
   var baseX = $('#parallax').offset().left + 180;
-  var baseY = $('#parallax').offset().top + 240;
+  var baseY = $('#parallax').offset().top + 120;
   var layers = $('#parallax').children().map(function(_, layer) {
     return {
       $: $(layer),
