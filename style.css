@@ -1,12 +1,20 @@
 /* div#pad {margin: 0 auto;width: 360px;height: 200px;} */
 
 /* div#fot {margin: 0 auto;width: 360px;height: 200px;} */
+*{
+box-sizing:border-box;
+}
 
 div#parallax {
   margin: 0 auto;
   position: relative;
-  width: 360px;
-  height: 240px;
+  width: 80%;
+  height: auto;
+}
+
+html,body{
+  height: 90%;
+  margin: 0,0;
 }
 
 div#parallax div {
@@ -14,7 +22,7 @@ div#parallax div {
   display: block;
   overflow: hidden;
   image-rendering: pixelated;
-  background-size: contain;
+  background-size: 200%;
 }
 
 div#parallax div.bg {
