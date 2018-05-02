@@ -8,8 +8,8 @@ box-sizing:border-box;
 div#parallax {
   margin: 0 auto;
   position: relative;
-  width: 80%;
-  height: auto;
+  width: 360px;
+  height: 240px;
 }
 
 html,body{
@@ -22,7 +22,7 @@ div#parallax div {
   display: block;
   overflow: hidden;
   image-rendering: pixelated;
-  background-size: 200%;
+  background-size: contain;
 }
 
 div#parallax div.bg {
