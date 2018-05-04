@@ -5,6 +5,15 @@
 box-sizing:border-box;
 }
 */
+
+@@font-face {
+  font-family: '3x3 dot font';
+  src:url('./3x3dot_font.ttf') format('truetype');
+}
+
+a{
+  font-family: '3x3 dot font';
+}
 div#parallax {
   margin: 0 auto;
   position: relative;
