@@ -21,6 +21,7 @@ $(function() {
       basecoords: $("#" + layer.className + "area").length ? $("#" + layer.className + "area").attr('coords') : ''
     };
   });
+  /*
   $(document.body).mousemove(function(ev) {
     $.each(layers, function(_, layer) {
       var dx = ev.pageX - baseX;
@@ -29,13 +30,13 @@ $(function() {
       var $this = $("#" + layer.$[0].className + "area");
       if (layer.basecoords.length) {
         var coords = layer.basecoords.split(','),
-          newcoords = new Array(coords.length);
+        newcoords = new Array(coords.length);
 
         for (var i = 0; i < newcoords.length; ++i) {
           if (i % 2 === 0)
-            newcoords[i] = parseInt(+coords[i] + (dx * layer.factor));
+          newcoords[i] = parseInt(+coords[i] + (dx * layer.factor));
           else
-            newcoords[i] = parseInt(+coords[i] + (dy * layer.factor));
+          newcoords[i] = parseInt(+coords[i] + (dy * layer.factor));
         }
         $this.attr('coords', newcoords.toString());
       }
@@ -45,6 +46,7 @@ $(function() {
       });
     });
   });
+  */
   var isSP = navigator.userAgent.search(/(iPhone|iPad|Android)/) !== -1;
   !isSP && $(document.body).mousemove(function(ev) {
     var dx = ev.pageX - baseX;
@@ -56,13 +58,13 @@ $(function() {
       var $this = $("#" + layer.$[0].className + "area");
       if (layer.basecoords.length) {
         var coords = layer.basecoords.split(','),
-          newcoords = new Array(coords.length);
+        newcoords = new Array(coords.length);
 
         for (var i = 0; i < newcoords.length; ++i) {
           if (i % 2 === 0)
-            newcoords[i] = parseInt(+coords[i] + (dx * layer.factor));
+          newcoords[i] = parseInt(+coords[i] + (dx * layer.factor));
           else
-            newcoords[i] = parseInt(+coords[i] + (dy * layer.factor));
+          newcoords[i] = parseInt(+coords[i] + (dy * layer.factor));
         }
         $this.attr('coords', newcoords.toString());
       }
@@ -74,8 +76,8 @@ $(function() {
   });
 
   isSP && window.addEventListener("devicemotion", function(ev) {
-    var dy = baseY / 2 + ev.accelerationIncludingGravity.y * 100;
-    var dx = baseX / 2 - ev.accelerationIncludingGravity.x * 100;
+    var dy = baseY / 2 + ev.accelerationIncludingGravity.y * 25;
+    var dx = baseX / 2 - ev.accelerationIncludingGravity.x * 25;
 
 
 
@@ -83,13 +85,13 @@ $(function() {
       var $this = $("#" + layer.$[0].className + "area");
       if (layer.basecoords.length) {
         var coords = layer.basecoords.split(','),
-          newcoords = new Array(coords.length);
+        newcoords = new Array(coords.length);
 
         for (var i = 0; i < newcoords.length; ++i) {
           if (i % 2 === 0)
-            newcoords[i] = parseInt(+coords[i] + (dx * layer.factor));
+          newcoords[i] = parseInt(+coords[i] + (dx * layer.factor));
           else
-            newcoords[i] = parseInt(+coords[i] + (dy * layer.factor));
+          newcoords[i] = parseInt(+coords[i] + (dy * layer.factor));
         }
         $this.attr('coords', newcoords.toString());
       }
