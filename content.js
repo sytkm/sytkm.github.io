@@ -76,8 +76,13 @@ $(function() {
   });
 
   isSP && window.addEventListener("devicemotion", function(ev) {
+    if (window.innerHeight>window.innerWidth) {
     var dy = baseY / 2 + ev.accelerationIncludingGravity.y * 25;
     var dx = baseX / 2 - ev.accelerationIncludingGravity.x * 25;
+    }else{
+    var dy = baseY / 2 + ev.accelerationIncludingGravity.x * 25;
+    var dx = baseX / 2 - ev.accelerationIncludingGravity.y * 25;
+    }
 
 
 
